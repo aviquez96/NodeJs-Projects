@@ -1,24 +1,44 @@
-console.log("Starting app.js")
-
-const fs = require('fs');
-const _ = require('lodash');
-
-//Specifies everything that is exported from notes.js
+const chalk = require('chalk');
+const yargs = require('yargs');
 const notes = require('./notes.js');
 
-//Returns an array containing the command line arguments passed when the node process is launched
-var command = process.argv[2];
-console.log('Command: ', command);
-console.log(process.argv);
+yargs.version('1.1.0')
 
-if (command === 'add') {
-    console.log('Adding new note');
-} else if (command === 'list') {
-    console.log('Listing all notes');
-} else if (command === 'read') {
-    console.log('Reading note');
-} else if (command === 'remove') {
-    console.log('Removing note')
-} else {
-    console.log('Command not recognized');
-}
+yargs.command({
+    command: 'add',
+    description: 'Add a new note',
+    handler: function() {
+        console.log("adding a new note");
+    }
+})
+
+yargs.command({
+    command: 'remove',
+    description: "Removes a note",
+    handler: function() {
+        console.log("removing the note")
+    }
+})
+
+yargs.command({
+    command: 'list',
+    description: "Listing all the notes",
+    handler: function() {
+        console.log("listing the notes")
+    }
+})
+
+yargs.command({
+    command: 'read',
+    description: "Reading the notes",
+    handler: function() {
+        console.log("reading the notes")
+    }
+})
+
+console.log(yargs.argv);
+
+
+
+
+
