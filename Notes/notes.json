@@ -1,7 +1,1 @@
-[{
-    "title": "The first note",
-    "body": "I really hope this works"
-}, {
-    "title": "The second note",
-    "body": "This will work"
-}]
+[{"title":"The first note","body":"I really hope this works"},{"title":"The second note","body":"This will work"},{"title":"Test1","body":"Body1"}]
