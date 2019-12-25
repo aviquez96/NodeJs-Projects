@@ -5,6 +5,9 @@ const addNote = (title, body) => {
     let notes = loadNotes();
     const duplicateNote = notes.find((note) => note.title === title)
 
+    //When you add this, you have to say "node inspect ..." to get debugger going and access its contents in chrome//debugger; essentially a breakpoint
+    // debugger
+
     if(!duplicateNote) {
         notes.push({
             title: title,
